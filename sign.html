@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zomato Login</title>
+    <link rel="stylesheet" href="login.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            box-sizing: border-box;
+            text-decoration: none;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #e23744;
+        }
+
+        .login-container {
+            width: 100%;
+            max-width: 400px;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+            background-color: white;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            color: #e23744;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .cancel {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        /* Phone input block */
+        .phone-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+
+        .phone-wrapper img.flag {
+            width: 24px;
+            height: 24px;
+            margin-right: 8px;
+        }
+
+        .phone-wrapper .country-code {
+            margin-right: 5px;
+            font-weight: 500;
+        }
+
+        .phone-wrapper .divider {
+            margin-right: 10px;
+            color: #aaa;
+        }
+
+        .phone-wrapper input {
+            border: none;
+            outline: none;
+            flex: 1;
+            font-size: 1rem;
+        }
+
+        /* OTP Button */
+        .otp {
+            width: 100%;
+            padding: 12px;
+            background-color: #e23744;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 10px;
+        }
+
+        .otp:hover {
+            background-color: #c82333;
+        }
+
+        /* Separator */
+        .separator {
+            margin: 20px 0;
+            font-weight: bold;
+            color: #999;
+            position: relative;
+        }
+
+        .separator::before,
+        .separator::after {
+            content: "";
+            height: 1px;
+            width: 30%;
+            background-color: #ccc;
+            position: absolute;
+            top: 50%;
+        }
+
+        .separator::before {
+            left: 0;
+        }
+
+        .separator::after {
+            right: 0;
+        }
+
+        /* Social Buttons */
+        .social-btn {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            font-size: 1rem;
+            border: 1px solid black;
+            background-color: transparent;
+            color: black;
+            border-radius: 6px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .social-btn i {
+            font-size: 1.1rem;
+        }
+
+        /* Signup */
+        .signup {
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
+
+        .signup a {
+            color: #e23744;
+            font-weight: bold;
+        }
+
+        .signup a:hover {
+            text-decoration: underline;
+        }
+
+        .login-container {
+            width: 100%;
+            max-width: 400px;
+            padding: 30px;
+            /* /* border: 1px solid black;       */
+            border-radius: 10px;
+            /* You can adjust the radius as needed */
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+            box-shadow: 6px 10px 100px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            .login-container {
+                max-width: 90%;
+                padding: 20px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            }
+
+            .logo {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.2rem;
+            }
+
+            .otp,
+            .social-btn {
+                padding: 10px;
+                font-size: 0.95rem;
+            }
+
+            .phone-wrapper {
+                flex-direction: row;
+                flex-wrap: wrap;
+                padding: 8px;
+            }
+
+            .phone-wrapper img.flag {
+                width: 20px;
+                height: 20px;
+            }
+
+            .phone-wrapper input {
+                width: 100%;
+                margin-top: 8px;
+            }
+
+            .cancel {
+                top: 10px;
+                right: 15px;
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .login-container {
+                padding: 15px;
+            }
+
+            .logo {
+                font-size: 1.8rem;
+            }
+
+            h2 {
+                font-size: 1rem;
+            }
+
+            .otp,
+            .social-btn {
+                font-size: 0.9rem;
+                padding: 8px;
+            }
+
+            .signup {
+                font-size: 0.8rem;
+            }
+        }
+
+        .email-input {
+            width: 100%;
+            font-size: 17px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-container">
+        <span class="cancel"><i class="fa-solid fa-xmark"></i></span>
+        <div class="logo">Zomato</div>
+        <h2>Signup your account</h2>
+        <form class="login-form">
+            <div class="phone-wrapper">
+                <input placeholder="Full Name" required />
+            </div>
+            <input placeholder="Email" required class="phone-wrapper email-input" />
+            <button type="submit" class="otp">Send One Time Password</button>
+            <div class="separator">OR</div>
+            <button class="social-btn google-btn" style="border: none;">
+                <i class="fa-brands fa-google"></i> Sign in with Google
+            </button>
+            <div class="signup">
+                Already have an account?<a href="login.html" target="_blank">Login</a>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
